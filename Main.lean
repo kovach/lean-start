@@ -48,12 +48,12 @@ def Expr.compile : Expr → FilePath → IO Unit := sorry
 
 /- Exercise 3: joins via polynomial multiplication
 
-  1 Design a representation `Poly` for the set of polynomials modulo the equations:
-    - x * x = x
-    - x * y = 0, if x ≠ y
+  1 Design a representation `Poly` for the set of polynomials over variables $x_ij$ modulo the equations:
+    - x_ij * x_ij = x_ij
+    - x_ij * y_ik = 0, if j ≠ k
     You should assume the set of variables is possibly infinite;
-    you can assume they are indexed by String or Nat or use a type variable
-    (at this step, your representation doesn't necessarily need to care about these equations).
+    you can assume `i, j, k ∈ String` (or Nat, or an abstract variable).
+    At this step, your representation doesn't necessarily need to care about the equations.
 
   2 Write a function that multiplies them (now the equations are important).
     Also a write a function `canonical : Poly → Poly` that puts a polynomial into a canonical form, that is:
